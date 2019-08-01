@@ -75,7 +75,7 @@ def comparision (arx_int, ary_int):
 f2score, MCC, true_match, false_match, tf_match, ft_match = comparision(arx, ary)
 print("F2 Score: ", "%.2f" % f2score)
 print("MCC: ", "%.2f" % MCC)
-print("True_x/True_y match: ", "%.2f" % dat1[0], "%")
+print("True_x/True_y match: ", "%.2f" % true_match, "%")
 print("False_x/False_y match: ", "%.2f" % false_match, "%")
 print("True_x/False_y match: ", "%.2f" % tf_match, "%")
 print("False_x/True_y match: ", "%.2f" % ft_match, "%") 
