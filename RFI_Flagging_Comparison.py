@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[5]:
+
+
 import os
 import sys
 import numpy as np
@@ -5,6 +11,10 @@ import tensorflow as tf
 from pyuvdata import UVData
 from pyuvdata import UVFlag
 from hera_qm.hera_qm import xrfi
+
+
+# In[6]:
+
 
 h1c_data = "/lustre/aoc/projects/hera/H1C_IDR2/2458098/zen.2458098.37904.HH.uvh5"
 uvd = UVData()
@@ -27,6 +37,10 @@ for x in range (len(arx[0][0])):
         temp = xrfi.xrfi_waterfall(wf_xx)
         ary = np.dstack([ary, temp])         
     x += 1
+
+
+# In[9]:
+
 
 def comparision (arx_int, ary_int):
     
@@ -72,10 +86,21 @@ def comparision (arx_int, ary_int):
     return (f2score, MCC, tp, tn, fp, fn)
 
 
+# In[10]:
+
+
 f2score, MCC, true_match, false_match, tf_match, ft_match = comparision(arx, ary)
+
 print("F2 Score: ", "%.2f" % f2score)
 print("MCC: ", "%.2f" % MCC)
 print("True_x/True_y match: ", "%.2f" % true_match, "%")
 print("False_x/False_y match: ", "%.2f" % false_match, "%")
 print("True_x/False_y match: ", "%.2f" % tf_match, "%")
-print("False_x/True_y match: ", "%.2f" % ft_match, "%") 
+print("False_x/True_y match: ", "%.2f" % ft_match, "%")    
+
+
+# In[ ]:
+
+
+
+
